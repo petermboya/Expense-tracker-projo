@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p id="status" class="status" role="status"></p>
+
+  <header class="top">
+    <h1>Expense Tracker</h1>
+    <label class="home">
+      Home currency
+      <select id="home-currency" aria-label="Home currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="KES">KES</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add an expense</h2>
+      <form id="expense-form">
+        <label>
+          <input type="text" id="description" placeholder="e.g. Lunch" required>
+        </label>
+        <div class="row">
+          <label>
+            Amount
+            <input type="number" id="amount" min="0" step="0.01" placeholder="0.00" required>
+          </label>
+          <label>
+            Currency
+            <select id="currency">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="JPY">JPY</option>
+              <option value="AUD">AUD</option>
+            </select>
+          </label>
+          <button type="button" id="convert">Convert to home currency</button>
+        </div>
+        <label>
+          Category
+          <select id="category">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+          </select>
+        </label>
+        <button type="submit">Add expense</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-head">
+        <h2>Expenses</h2>
+        <label class="filter">
+          Show
+          <select id="filter">
+            <option>All</option>
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <ul id="expense-list" class="expense-list"></ul>
+
+      <div class="total">
+        <span>Total</span>
+        <strong id="total">0.00</strong>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
