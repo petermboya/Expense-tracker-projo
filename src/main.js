@@ -39,9 +39,8 @@ async function loadRates() {
       return;
     }
     rates = loadedRates;
-    const codes = Object.keys(loadedRates).sort();
-    fillCurrencySelect(homeSelect, codes, homeCurrency);
-    fillCurrencySelect(currencySelect, codes, currencySelect.value || 'USD');
+    fillCurrencySelect(homeSelect, DEFAULT_CURRENCIES, homeCurrency);
+    fillCurrencySelect(currencySelect, DEFAULT_CURRENCIES, currencySelect.value || 'USD');
     showStatus('Rates are up to date.');
   } catch (error) {
     if (request !== rateRequest) {
