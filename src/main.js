@@ -11,7 +11,8 @@ const convertButton = document.getElementById('convert');
 const amountInput = document.getElementById('amount');
 
 // a short list to start with, the real list comes back from the API
-const DEFAULT_CURRENCIES = ['USD', 'EUR', 'GBP', 'KES'];
+const DEFAULT_CURRENCIES = ['USD', 'EUR', 'GBP', 'KES', 'JPY'];
+const codes = [ 'USD', 'EUR', 'GBP', 'JPY', 'KES' ];
 
 let rates = null;
 let homeCurrency = 'USD';
